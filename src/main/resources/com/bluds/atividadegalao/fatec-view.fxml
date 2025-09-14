@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.bluds.atividadegalao.HelloController"
+      spacing="10" alignment="CENTER">
+
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <!-- Imagem grande centralizada no topo -->
+    <HBox alignment="CENTER">
+        <ImageView fx:id="imgFatec" fitWidth="200" fitHeight="120" preserveRatio="true"/>
+    </HBox>
+
+    <!-- Linha Algoritmo com ícone -->
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <ImageView fx:id="iconFatec" fitWidth="20" fitHeight="20" preserveRatio="true" image="fatecimg.webp"/>
+        <Label text="Algoritmo:"/>
+        <ComboBox fx:id="cboAlgo" prefWidth="200"/>
+    </HBox>
+
+    <HBox spacing="10">
+        <Label text="Origem:"/>
+        <ComboBox fx:id="cboOrig" prefWidth="260"/>
+    </HBox>
+
+    <HBox spacing="10">
+        <Label text="Destino:"/>
+        <ComboBox fx:id="cboDest" prefWidth="260"/>
+    </HBox>
+
+    <Button text="Iniciar" onAction="#onStartClick"/>
+
+    <TextArea fx:id="output" prefRowCount="20" prefColumnCount="80"/>
+</VBox>
