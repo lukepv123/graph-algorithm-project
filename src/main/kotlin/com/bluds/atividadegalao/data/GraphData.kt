@@ -1,15 +1,22 @@
 package com.bluds.atividadegalao.data
+// pacote de dados
 
 data class Edge(val to: Int, val w: Int)
+// uma aresta tem destino (to) e peso (w = distância)
 
 object GraphData {
+    // aqui deixei os dados do grafo (as cidades e distâncias)
+
     val cities = listOf(
         "Piracicaba", "Americana", "Paulinia", "Sumare", "Monte Mor",
         "Campinas", "Indaiatuba", "Capivari", "Salto", "Itu",
         "Sorocaba", "Boituva", "Tatui", "Tiete", "Porto Feliz"
     )
+    // lista de cidades
 
     private val M: Array<Array<Int?>> = arrayOf(
+        // matriz de adjacência: null = sem conexão, número = distância
+
         arrayOf(0,30,null,null,null,null,null,32,null,null,null,null,null,35,null),
         arrayOf(30,0,22,18,null,null,null,null,null,null,null,null,null,null,null),
         arrayOf(null,22,0,null,null,25,null,null,null,null,null,null,null,null,null),
@@ -28,8 +35,11 @@ object GraphData {
     )
 
     fun weight(u: Int, v: Int): Int? = M[u][v] ?: M[v][u]
+    // retorna o peso entre duas cidades (pode estar em u->v ou v->u)
 
     fun neighbors(u: Int): List<Edge> {
+        // retorna todos vizinhos da cidade u
+
         val res = mutableListOf<Edge>()
         for (v in cities.indices) {
             val w = weight(u, v)
@@ -40,6 +50,8 @@ object GraphData {
 }
 
 fun totalDistance(path: List<Int>): Int {
+    // calcula a distância total de um caminho
+
     if (path.size < 2) return 0
     var sum = 0
     for (i in 0 until path.lastIndex) {

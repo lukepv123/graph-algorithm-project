@@ -3,6 +3,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
 <?import javafx.geometry.Insets?>
 
 <VBox xmlns:fx="http://javafx.com/fxml"
@@ -15,12 +16,12 @@
 
     <!-- Imagem grande centralizada no topo -->
     <HBox alignment="CENTER">
-        <ImageView fx:id="imgFatec" fitWidth="200" fitHeight="120" preserveRatio="true"/>
+        <ImageView fx:id="imgFatec"
+                   fitWidth="200" fitHeight="120" preserveRatio="true"/>
     </HBox>
 
     <!-- Linha Algoritmo com ícone -->
     <HBox spacing="10" alignment="CENTER_LEFT">
-        <ImageView fx:id="iconFatec" fitWidth="20" fitHeight="20" preserveRatio="true" image="fatecimg.webp"/>
         <Label text="Algoritmo:"/>
         <ComboBox fx:id="cboAlgo" prefWidth="200"/>
     </HBox>
